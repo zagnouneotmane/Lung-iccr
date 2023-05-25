@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <!--link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"-->
+
+    <title>Responsive Regisration Form </title> 
+</head>
+<body>
+    <div class="container">
+        <header>Rapport d'histopathologie du cancer du poumon</header>
+        
+        <form action="">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Détails Personnel</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Nom complet</label>
+                            <input id="nom" type="text" placeholder="Nom et Prénom" >
+                        </div>
+
+                        <div  class="input-field">
+                            <label>Date de Naissance</label>
+                            <input id="dn" type="date" placeholder="JJ/MM/AAAA" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Réference</label>
+                            <input id="ref" type="text" placeholder="JM********" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date de la demande </label>
+                            <input id="dd" type="date" placeholder="JJ/MM/AAAA" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Genre</label>
+                            <select required title="Select your gender">
+                                <option disabled selected>Genre</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Numéro d'accès/de laboratoire</label>
+                            <input id="na" type="number" placeholder="Numéro" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details medical">
+                    <span class="title">Détails Medical</span>
+                    <div class="fields1">
+                        <div class="input-field1">
+                            <label >PROTOCOLE OPÉRATOIRE</label>
+                            <input type="checkbox" name="option1a" value="Résection chirurgicale"> Résection chirurgicale
+                            <input type="checkbox" name="option2a" value="Pneumonectomie"> Pneumonectomie
+                            <input type="checkbox" name="option3a" value="Segmentectomie"> Segmentectomie
+                            <input type="checkbox" name="option4a" value="Lobectomie"> Lobectomie
+                            <input type="checkbox" name="option5a" value="Bilobectomie"> Bilobectomie
+                            <input type="checkbox" name="option6a" value="Autre, spécifier"> Autre, spécifier <textarea  name="Autre" id="a" cols="10" rows="1"></textarea>          
+                        </div>
+                        <div class="input-field1">
+                                <label>LATÉRALITÉ DU SPÉCIMEN</label>
+                                <select required>
+                                    <option disabled selected>Option</option>
+                                    <option>Gauche</option>
+                                    <option>Droite</option>
+                                    <option>Non indiqué</option>
+                                </select>  
+                        </div>
+                        <div class="input-field1">
+                          <label for="SA">STRUCTURES ANATOMIQUES INCLUSES</label>
+                          <input type="radio"  name="options11" value="Aucune Soumises"> Aucune Soumises 
+                          <input type="radio"  name="options11" value="Soumises"> Soumises
+                          <textarea name="s" id="b" cols="10" rows="1"></textarea>
+                        </div>
+                        <div class="input-field1">
+                          <label >SPÉCIMENS ASSOCIÉS</label>
+                          <input type="radio"  name="options22" value="Aucune Soumises"> Aucune Soumises
+                          <input type="radio"  name="options22" value="Ganglions lymphatiques"> Ganglions lymphatiques
+                          <input type="radio"  name="options22" value="Autre, spécifier"> Autre, spécifier
+                          <textarea name="Autre1" id="c" cols="10" rows="1"></textarea>
+                        </div>
+                        <div class="input-field2">
+                            <label>SITE TUMORAL</label>
+                            <input type="checkbox" name="option1c" value="Lobe supérieur"> Lobe supérieur
+                            <input type="checkbox" name="option2c" value="Lobe moyen"> Lobe moyen
+                            <input type="checkbox" name="option3c" value="Lobe inférieur"> Lobe inférieur
+                            <input type="checkbox" name="option4c" value="Bronche, spécifier le site"> Bronche, spécifier le site <textarea name="Autre2" id="d" cols="10" rows="1"></textarea>
+                      
+                        </div>
+                  
+                        <div class="input-field3">
+                            <label>NODULES TUMORAUX DISTINCTS</label>
+                            <div>
+                            <input type="radio" name="options33" value="Absents" onclick="hideOptions()"> Absents
+                            <input type="radio" name="options33" value="Ne peuvent être évalués" onclick="hideOptions()"> Ne peuvent être évalués
+                            <input type="radio" name="options33" value="Tumeurs primitives synchrones (élément ESSENTIEL,
+                            doit être indiqué pour chaque tumeur primitive  synchrone)" onclick="hideOptions()"> Tumeurs primitives synchrones (élément ESSENTIEL,
+                            doit être indiqué pour chaque tumeur primitive  synchrone)
+                            <input type="radio" name="options33" value="Présents" onclick="showOptions()"> Présents
+                            
+                            </div>
+                            
+                            <div class="div11" id="options" style="display: none;">
+                            <label >site</label> 
+                            <input type="checkbox" name="option1d" value="Même lobe"> Même lobe
+                            <input type="checkbox" name="option2d" value="Autre lobe ipsilatéral"> Autre lobe ipsilatéral
+                            <input type="checkbox" name="option3d" value="Poumon controlatéral"> Poumon controlatéral
+                            <br>
+                            <label>nombre de tumeurs</label>
+                            <textarea name="n" id="n" cols="10" rows="1"></textarea>
+                            
+                            </div>
+                        
+                            <script>
+                            function showOptions() {
+                                var optionsDiv = document.getElementById("options");
+                                optionsDiv.style.display = "block";
+                            }
+                            
+                            function hideOptions() {
+                                var optionsDiv = document.getElementById("options");
+                                optionsDiv.style.display = "none";
+                            }
+                            </script>
+                         
+                        </div>
+                        <div class="input-field1">
+                            <label >ASPECT MACROSCOPIQUE DE LA PLÈVRE <br> RECOUVRANT UNE TUMEUR</label>
+                            <textarea name="AM" id="AM" cols="20" rows="2"></textarea>
+                           
+                        </div>
+
+                        <div class="input-field1">
+                          <label>ATÉLECTASIE/PNEUMOPATHIE OBSTRUCTIVE <br> S'ÉTENDANT JUSQU'À LA RÉGION DU HILE</label>
+                          <input type="radio" name="options44" value="Présente"> Présente 
+                          <input type="radio" name="options44" value="Absente"> Absente
+                          <input type="radio" name="options44" value="Non évaluable"> Non évaluable 
+                        </div>
+                        <div class="input-field1">
+                            <label>DIMENSION MAXIMALE DE LA TUMEUR </label>
+                            <textarea name="m"placeholder="      mm" id="m" cols="10" rows="1"></textarea>  
+                        </div>
+                        <div class="input-field1">
+                            <label>ATTEINTE DE LA BRONCHE SOUCHE</label>
+                            <input type="radio" name="options55" value="Non applicable"> Non applicable
+                            <input type="radio" name="options55" value="Non évaluable ">  Non évaluable 
+                            <input type="radio" name="options55" value="Non identifiée">  Non identifiée 
+                            <input type="radio" name="options55" value="Présente"> Présente
+                        
+                        </div>
+                        <div class="input-field1">
+                            <label>ATTEINTE DE LA CARÈNE TRACHÉALE</label>
+                            <input type="radio" name="options66" value="Non applicable"> Non applicable
+                            <input type="radio" name="options66" value="Non évaluable"> Non évaluable
+                            <input type="radio" name="options66" value="Non identifiée "> Non identifiée 
+                            <input type="radio" name="options66" value="Présente"> Présente
+                        </div>
+    
+                        <div class="input-field1">
+                            <label>TYPE HISTOLOGIQUE DE LA TUMEUR</label>
+                            <div>
+                                <input type="radio" name="tumorType" value="Carcinome à grandes cellules" onclick="showSubOptions()"> Carcinome à grandes cellules
+                                <input type="radio" name="tumorType" value="Carcinome à petites cellules" onclick="showSubOptions()"> Carcinome à petites cellules
+                                <input type="radio" name="tumorType" value="Carcinome neuroendocrine à grandes cellules" onclick="showSubOptions()"> Carcinome neuroendocrine à grandes cellules
+                                <input type="radio" name="tumorType" value="Carcinome épidermoïde" onclick="showSubOptions()"> Carcinome épidermoïde
+                                <input type="radio" name="tumorType" value="Carcinoïde" onclick="showSubOptions()"> Carcinoïde
+                                <input type="radio" name="tumorType" value="Adénocarcinome in situ" onclick="showSubOptions()"> Adénocarcinome in situ
+                               
+                                <input type="radio" name="tumorType" value="Adénocarcinome minimalement invasif" onclick="showSubOptions()"> Adénocarcinome minimalement invasif
+
+                                <input type="radio" name="tumorType" value="Adénocarcinome invasif" onclick="showSubOptions()"> Adénocarcinome invasif
+                                <input type="radio" name="tumorType" value="Autre" onclick="showSubOptions()"> Autre, spécifier
+                                <textarea name="tre" id="tre" cols="10" rows="1"></textarea>
+
+
+                            </div>
+                        
+                            <div class="div111" id="subOptions" style="display: none;">
+                                
+                                <div>
+                                    <input type="radio" name="subTumorType" value="Kératinisant"> Kératinisant
+                                    <input type="radio" name="subTumorType" value="Non kératinisant"> Non kératinisant
+                                    <input type="radio" name="subTumorType" value="Basaloïde"> Basaloïde
+                                </div>
+                        
+                                <div>
+                                    <input type="radio" name="subTumorType" value="Typique"> Typique
+                                    <input type="radio" name="subTumorType" value="Atypique"> Atypique
+                                </div>
+                                
+
+                                <div>
+                                    <input type="radio" name="subTumorType" value="Lépidique"> Lépidique
+                                    <input type="radio" name="subTumorType" value="Acineux"> Acineux
+                                    <input type="radio" name="subTumorType" value="Papillaire"> Papillaire
+                                    <input type="radio" name="subTumorType" value="Micropapillaire"> Micropapillaire 
+                                    <input type="radio" name="subTumorType" value="Solide"> Solide
+                                    <input type="radio" name="subTumorType" value="Mucineux invasif"> Mucineux invasif
+                                    <input type="radio" name="subTumorType" value="Colloïde"> Colloïde 
+                                    <input type="radio" name="subTumorType" value="Fœtal"> Fœtal 
+                                    <input type="radio" name="subTumorType" value="De type intestinal"> De type intestinal
+                                </div>
+                                <div>
+                                    <input type="radio" name="subTumorType" value="Non mucineux"> Non mucineux
+                                    <input type="radio" name="subTumorType" value="Mucineux"> Mucineux
+                                </div>
+                                
+                            </div>
+                        
+                            <script>
+                                
+                                function showSubOptions() {
+                                    var subOptionsDiv = document.getElementById("subOptions");
+                                    var tumorType = document.querySelector('input[name="tumorType"]:checked').value;
+                        
+                                    if (tumorType === "Carcinome épidermoïde") {
+                                        subOptionsDiv.style.display = "block";
+                                        // Afficher les options pour le carcinome épidermoïde et masquer celles pour le carcinome
+                                        document.querySelectorAll('input[name="subTumorType"]').forEach(function(option) {
+                                            if (option.value === "Kératinisant" || option.value === "Non kératinisant" || option.value === "Basaloïde") {
+                                                option.parentElement.style.display = "inline-block";
+                                            } else {
+                                                option.parentElement.style.display = "none";
+                                            }
+                                        });
+                                    } else if (tumorType === "Carcinoïde") {
+                                        subOptionsDiv.style.display = "block";
+                                        // Afficher les options pour le carcinome et masquer celles pour le carcinome épidermoïde
+                                        document.querySelectorAll('input[name="subTumorType"]').forEach(function(option) {
+                                            if (option.value === "Typique" || option.value === "Atypique") {
+                                                option.parentElement.style.display = "inline-block";
+                                            } else {
+                                                option.parentElement.style.display = "none";
+                                            }
+                                        });
+                                    } else if (tumorType === "Adénocarcinome invasif") {
+                                        subOptionsDiv.style.display = "block";
+                                        // Afficher les options pour le carcinome et masquer celles pour le carcinome épidermoïde
+                                        document.querySelectorAll('input[name="subTumorType"]').forEach(function(option) {
+                                            if (option.value === "Lépidique" || option.value === "Acineux" || option.value === "Papillaire" || option.value === "Micropapillaire" || option.value === "Solide" || option.value === "Mucineux invasif" || option.value === "Colloïde" || option.value === "Fœtal" || option.value === "De type intestinal") {
+                                                option.parentElement.style.display = "inline-block";
+                                            } else {
+                                                option.parentElement.style.display = "none";
+                                            }
+                                    });
+                                    } else if (tumorType === "Adénocarcinome in situ") {
+                                        subOptionsDiv.style.display = "block";
+                                        // Afficher les options pour le carcinome et masquer celles pour le carcinome épidermoïde
+                                        document.querySelectorAll('input[name="subTumorType"]').forEach(function(option) {
+                                            if (option.value === "Non mucineux" || option.value === "Mucineux") {
+                                                option.parentElement.style.display = "inline-block";
+                                            } else {
+                                                option.parentElement.style.display = "none";
+                                            }
+                                    });
+                                    } else if (tumorType === "Adénocarcinome minimalement invasif") {
+                                        subOptionsDiv.style.display = "block";
+                                        // Afficher les options pour le carcinome et masquer celles pour le carcinome épidermoïde
+                                        document.querySelectorAll('input[name="subTumorType"]').forEach(function(option) {
+                                            if (option.value === "Non mucineux" || option.value === "Mucineux") {
+                                                option.parentElement.style.display = "inline-block";
+                                            } else {
+                                                option.parentElement.style.display = "none";
+                                            }
+                                    });
+                                    } else {
+                                        subOptionsDiv.style.display = "none";
+                                    }
+                                }
+                                /*function showSubOptions() {
+                                    const tumorTypeInputs = document.getElementsByName("tumorType");
+                                    let selectedTumorType = "";
+                                    for (let i = 0; i < tumorTypeInputs.length; i++) {
+                                        if (tumorTypeInputs[i].checked) {
+                                        selectedTumorType = tumorTypeInputs[i].value;
+                                        break;
+                                        }
+                                    }
+
+                                    const subOptions = document.getElementById("subOptions");
+                                    if (selectedTumorType === "Carcinome épidermoïde") {
+                                        subOptions.style.display = "block";
+                                        const radioInputs = subOptions.querySelectorAll("input[type='radio']");
+                                        for (let i = 0; i < radioInputs.length; i++) {
+                                        const value = radioInputs[i].value;
+                                        if (value === "Kératinisant" || value === "Non kératinisant" || value === "Basaloïde") {
+                                            radioInputs[i].disabled = false;
+                                        } else {
+                                            radioInputs[i].disabled = true;
+                                        }
+                                        }
+                                    } else if (selectedTumorType === "Carcinoïde") {
+                                        subOptions.style.display = "block";
+                                        const radioInputs = subOptions.querySelectorAll("input[type='radio']");
+                                        for (let i = 0; i < radioInputs.length; i++) {
+                                        const value = radioInputs[i].value;
+                                        if (value === "Typique" || value === "Atypique") {
+                                            radioInputs[i].disabled = false;
+                                        } else {
+                                            radioInputs[i].disabled = true;
+                                        }
+                                        }
+                                    } else if (selectedTumorType === "Adénocarcinome invasif") {
+                                        subOptions.style.display = "block";
+                                        const radioInputs = subOptions.querySelectorAll("input[type='radio']");
+                                        for (let i = 0; i < radioInputs.length; i++) {
+                                        radioInputs[i].disabled = false;
+                                        }
+                                    } else {
+                                        subOptions.style.display = "none";
+                                    }
+                                }*/
+
+                            </script>
+                        </div>
+                        <div class="input-field1">
+                            <label>DISTANCE DE LA TUMEUR À LA MARGE DE RÉSECTION LA PLUS PROCHE
+                                 </label>
+                            <textarea name="m"placeholder="      mm" id="w" cols="10" rows="1"></textarea>  
+                        </div>
+
+                        <div class="input-field1">
+                            <label>GRADE HISTOLOGIQUE</label>
+                            
+                            <input type="radio" name="options88" value="Non applicable"> Non applicable
+                            <input type="radio" name="options88" value="Bien différencié"> Bien différencié
+                            <input type="radio" name="options88" value="indifférencié">  indifférencié
+                            <input type="radio" name="options88" value="Modérément différencié"> Modérément différencié
+                            <input type="radio" name="options88" value="Peu différencié"> Peu différencié
+                        </div>
+
+                        <div class="input-field1">
+                            <label>RÉPONSE AU TRAITEMENT NÉO-ADJUVANT</label>
+                            <input type="radio" name="options99" value="Non applicable"> Non applicable
+                            <input type="radio" name="options99" value="Moins de 10 % de tumeur viable résiduelle"> Moins de 10 % de tumeur viable résiduelle
+                            <input type="radio" name="options99" value="Plus de 10 % de tumeur viable résiduelle"> Plus de 10 % de tumeur viable résiduelle
+                            <input type="radio" name="options99" value="Antécédents de traitement inconnus"> Antécédents de traitement inconnus
+                        </div> 
+                        <div class="input-field4">
+                            <label>INVASION DIRECTE DES STRUCTURES ADJACENTES </label>
+                            <div class="r">
+                            <input type="radio" name="options111" value="Non applicable"> Non applicable
+                            <input type="radio" name="options111" value="Non identifiée"> Non identifiée <br>
+                            </div>
+                            <input type="checkbox" name="options1e" value="Trachée"> Trachée
+                            <input type="checkbox" name="options2e" value="Paroi thoracique"> Paroi thoracique 
+                            <input type="checkbox" name="options3e" value="Diaphragme"> Diaphragme 
+                            <input type="checkbox" name="options4e" value="Œsophage"> Œsophage 
+                            <input type="checkbox" name="options5e" value="Cœur"> Cœur
+                            <input type="checkbox" name="options6e" value="Gros vaisseaux"> Gros vaisseaux 
+                            <input type="checkbox" name="options7e" value="Corps vertébral"> Corps vertébral 
+                            <input type="checkbox" name="options8e" value="Nerf phrénique"> Nerf phrénique 
+                            <input type="checkbox" name="options9e" value="Médiastin"> Médiastin 
+                            <input type="checkbox" name="options10e" value="Graisse médiastinale"> Graisse médiastinale 
+                            <input type="checkbox" name="options11e" value="Plèvre médiastinale"> Plèvre médiastinale 
+                            <input type="checkbox" name="options12e" value="Péricarde pariétal"> Péricarde pariétal
+                            <input type="checkbox" name="options13e" value="Nerf laryngé récurrent"> Nerf laryngé récurrent
+                        </div>
+                        <div class="input-field1">
+                            <label>INVASION LYMPHOVASCULAIRE </label>
+                            <input type="radio" name="options222" value="Présente"> Présente
+                            <input type="radio" name="options222" value="Indéterminée"> Indéterminée
+                            <input type="radio" name="options222" value="Non identifiée"> Non identifiée 
+                        </div>
+                        <div class="input-field5">
+                            <label>INVASION DE LA PLÈVRE VISCÉRALE</label>
+                            <div>
+                                <input type="radio" name="options33r" value="Non identifiée" onclick="hideOptionsr()"> Non identifiée 
+                                <input type="radio" name="options33r" value="Ne peuvent être évalués" onclick="hideOptionsr()"> Ne peuvent être évalués
+                                <input type="radio" name="options33r" value="Indéterminée" onclick="hideOptionsr()"> Indéterminée 
+                                <input type="radio" name="options33r" value="Présente" onclick="showOptionsr()"> Présente
+                            
+                            </div>
+                            
+                            <div class="div111" id="optionsr" style="display: none;">
+                            <label >Étendue de l'atteinte pleurale</label> 
+                            <input type="checkbox" name="option1dr" value="PL1"> PL1
+                            <input type="checkbox" name="option2dr" value="PL2"> PL2
+                            <input type="checkbox" name="option3dr" value="PL3"> PL3
+                            
+                            
+                            </div>
+                        
+                            <script>
+                            function showOptionsr() {
+                                var optionsDiv = document.getElementById("optionsr");
+                                optionsDiv.style.display = "block";
+                            }
+                            
+                            function hideOptionsr() {
+                                var optionsDiv = document.getElementById("optionsr");
+                                optionsDiv.style.display = "none";
+                            }
+                            </script>
+                         
+                        </div>
+                        <div class="input-field1">
+                            <label>INVASION PÉRINEURALE </label>
+                            <input type="radio" name="options333" value="Présente"> Présente
+                            <input type="radio" name="options333" value="Indéterminée"> Indéterminée
+                            <input type="radio" name="options333" value="Non identifiée "> Non identifiée 
+                        </div> 
+                        
+                    </div>    
+                  
+ 
+
+                    <div class="nextBtn">
+                        <span class="btnText">Suivant</span>
+                        <i class="uil uil-navigator"></i>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details medical">
+                    <span class="title">Détails Medical </span>
+
+                    <div class="fields1">
+
+
+                        <div class="input-field1">
+                            <label>AUTRES PROCESSUS NÉOPLASIQUES</label>
+                            <textarea name="AP" id="AP" cols="10" rows="1"></textarea>
+                        </div>
+
+                        <div class="input-field1">
+                            <label>MALADIE PULMONAIRE NON NÉOPLASIQUE</label>
+                            <textarea name="MP" id="MP" cols="10" rows="1"></textarea>
+                        </div>
+                        <div class="input-field1">
+                            <label>ÉTAT DES MARGES CHIRURGICALES</label>
+                            <div class="c">
+                            <div class="div11">
+                                <label >Marge bronchique</label>
+                                <input type="radio" name="options444" value="Atteinte"> Atteinte
+                                <input type="radio" name="options444" value="Non atteinte"> Non atteinte
+                                <input type="radio" name="options444" value="Non applicable"> Non applicable 
+                                <input type="radio" name="options444" value="Atteinte par "> Atteinte par un carcinome invasif Non atteinte
+                                <input type="radio" name="options444" value="Atteinte par"> Atteinte par un carcinome in situ seulement
+                                
+                            </div>
+
+                            <div class="div22">
+                                <label >Marge vasculaire</label>  
+                                <input type="radio" name="options555" value="Atteinte"> Atteinte
+                                <input type="radio" name="options555" value="Non atteinte"> Non atteinte
+                                <input type="radio" name="options555" value="Non applicable"> Non applicable
+                                <input type="radio" name="options555" value="Non applicable des tissus"> Atteinte des tissus mous périvasculaires seulement 
+                            </div>
+                            </div>
+                            <div class="c">
+                            <div  class="div11">
+                                <label >Autre marge 1</label> 
+                                <textarea name="AM1" id="AM1" cols="10" rows="1"></textarea>
+                                <br>
+                                <input type="radio" name="options666" value="Atteinte"> Atteinte
+                                <input type="radio" name="options666" value="Non atteinte"> Non atteinte
+                                <input type="radio" name="options666" value="Non applicable"> Non applicable 
+                               
+                                 
+                            </div>
+
+                            <div class="div22">
+                                <label >Autre marge 2</label> 
+                                <textarea name="AM2" id="AM2" cols="10" rows="1"></textarea>
+                                <br> 
+                                <input type="radio" name="options777" value="Atteinte"> Atteinte
+                                <input type="radio" name="options777" value="Non atteinte"> Non atteinte
+                                <input type="radio" name="options777" value="Non applicable"> Non applicable 
+                            </div>
+                            </div>
+                            
+                        </div>
+                        <div class="input-field1">
+                            <label>STATUT GANGLIONNAIRE</label>
+                            <div>
+                                
+                                <input type="radio" name="options33rr" value="Non atteinte" onclick="hideOptionsrr()"> Non atteinte
+                                <input type="radio" name="options33rr" value="Non applicable" onclick="hideOptionsrr()"> Non applicable 
+                                <input type="radio" name="options33rr" value="Atteinte" onclick="showOptionsrr()"> Atteinte
+                            
+                            </div>
+                            
+                            <div class="groupement" id="optionsrr" style="display: none;">
+                                <div class="div1">
+                                <label >Site 1 atteint</label>  
+                                <textarea name="MP1" id="AP1" cols="10" rows="1"></textarea><br>
+                                <label >Nombre de ganglions lymphatiques atteints</label> 
+                                <textarea name="MP2" id="AP2" cols="10" rows="1"></textarea><br>
+                                <label >Nombre total de ganglions lymphatiques de ce site</label>  
+                                <textarea name="MP3" id="AP3" cols="10" rows="1"></textarea><br>
+                                <input type="radio" name="options1drr" value="Ne peut être déterminé"> Le nombre ne peut être déterminé
+                                </div>
+                                <div class="div2">
+                                <label >Site 2 atteint</label> 
+                                <textarea name="MP4" id="AP4" cols="10" rows="1"></textarea><br>
+                                <label >Nombre de ganglions lymphatiques atteints</label>
+                                <textarea name="MP5" id="AP5" cols="10" rows="1"></textarea><br>
+                                <label >Nombre total de ganglions lymphatiques de ce site</label>  
+                                <textarea name="MP6" id="AP6" cols="10" rows="1"></textarea><br>
+                                <input type="radio" name="options2drr" value="Ne peut être déterminé"> Le nombre ne peut être déterminé
+                                </div>
+                                <div class="div3">
+                                <label >Site 3 atteint</label>
+                                <textarea name="MP7" id="AP7" cols="10" rows="1"></textarea><br>
+                                <label >Nombre de ganglions lymphatiques atteints</label>
+                                <textarea name="MP8" id="AP8" cols="10" rows="1"></textarea><br>
+                                <label >Nombre total de ganglions lymphatiques de ce site</label>  
+                                <textarea name="MP9" id="AP9" cols="10" rows="1"></textarea><br>
+                                <input type="radio" name="options3drr" value="Ne peut être déterminé"> Le nombre ne peut être déterminé
+                                </div>
+                            
+                            </div>
+                        
+                            <script>
+                            function showOptionsrr() {
+                                var optionsDiv = document.getElementById("optionsrr");
+                                optionsDiv.style.display = "block";
+                            }
+                            
+                            function hideOptionsrr() {
+                                var optionsDiv = document.getElementById("optionsrr");
+                                optionsDiv.style.display = "none";
+                            }
+                            </script>
+                         
+                        </div> 
+                         
+                    </div>
+                </div>
+
+                <div class="details medical">
+                    <span class="title"> Études Connexes </span>
+                    <h5>MARQUEURS IMMUNOHISTOCHIMIQUES </h5>
+
+                    <div class="fields">
+    
+                        
+                        
+                        <div class="input-field">
+                                <label>Anticorps positifs &nbsp</label>
+                                <input id="ANP" type="text" >
+                            
+                        </div>
+                        <div class="input-field">
+                                <label>Anticorps équivoques</label>
+                                <input id="ANE" type="text" >
+                        </div>
+                        <div class="input-field">
+                                <label >Anticorps négatifs</label>
+                                <input id="ANN" type="text" >
+                        </div>
+                        <div class="input-field">
+                                <label>Conclusions</label>
+                                <input id="CLC" type="text">
+                        </div> 
+                    </div>
+                     
+                    <div class="fields1">
+
+                        <div class="input-field1">
+                            <label >DONNÉES MOLÉCULAIRES</label>
+                            <div class="div1">
+                                    <label>Résultat EGFR</label>
+                                    <div>
+                                        <input type="radio" name="options33rrr" value="Absence de mutation " onclick="hideOptionsrrr()"> Absence de mutation 
+                                        <input type="radio" name="options33rrr" value="Résultat indéterminé" onclick="hideOptionsrrr()"> Résultat indéterminé
+                                        <input type="radio" name="options33rrr" value="Mutation Présente" onclick="showOptionsrrr()"> Mutation Présente
+                                    
+                                    </div>
+                                    
+                                    <div class="div111" id="optionsrrr" style="display: none;">
+                                        
+                                        <label >décrire</label>
+                                        <textarea name="options33rrr" id="D" cols="20" rows="2"></textarea>
+                                    
+                                    </div>
+                                
+                                    <script>
+                                    function showOptionsrrr() {
+                                        var optionsDiv = document.getElementById("optionsrrr");
+                                        optionsDiv.style.display = "block";
+                                    }
+                                    
+                                    function hideOptionsrrr() {
+                                        var optionsDiv = document.getElementById("optionsrrr");
+                                        optionsDiv.style.display = "none";
+                                    }
+                                    </script>
+                                 
+                            </div>
+                            <div class="div2">
+                                <label>Résultat EML4-ALK</label>
+                                <div>
+                                    
+                                    <input type="radio" name="options33rrrr" value="Absence de réarrangement" onclick="hideOptionsrrrr()"> Absence de réarrangement
+                                    <input type="radio" name="options33rrrr" value="Résultat indéterminé" onclick="hideOptionsrrrr()"> Résultat indéterminé
+                                    <input type="radio" name="options33rrrr" value="Réarrangement présent" onclick="showOptionsrrrr()"> Réarrangement présent
+
+                                
+                                </div>
+                                
+                                <div class="div111" id="optionsrrrr" style="display: none;">
+                                    
+                                    <label >décrire</label>
+                                    <textarea name="options33rrrr" id="DD" cols="20" rows="2"></textarea>
+                                
+                                </div>
+                            
+                                <script>
+                                function showOptionsrrrr() {
+                                    var optionsDiv = document.getElementById("optionsrrrr");
+                                    optionsDiv.style.display = "block";
+                                }
+                                
+                                function hideOptionsrrrr() {
+                                    var optionsDiv = document.getElementById("optionsrrrr");
+                                    optionsDiv.style.display = "none";
+                                }
+                                </script>
+                             
+                            </div>
+                            <div class="div3">
+                                <label >Autre, spécifier</label> 
+                                <textarea name="AutreM" id="ADM" cols="10" rows="1"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="input-field6">
+                            <label >STADE PATHOLOGIQUE (TNM, 8e édition)</label>
+                            <div class="input-field6">
+                                <input type="checkbox" name="option1f" value="m"> m - multiples tumeurs primitives sur un seul site <br>
+                                <input type="checkbox" name="option2f" value="r"> r - tumeurs récidivantes après une période sans maladie <br>
+                                <input type="checkbox" name="option3f" value="y"> y - classification effectuée pendant ou après un traitement multimodal
+                            </div>
+                            <div class="input-field1">
+                                <label >T - tumeur primitive</label>
+                                <input type="radio" name="optionsT" value="TX"> TX
+                                <input type="radio" name="optionsT" value="T0"> T0
+                                <input type="radio" name="optionsT" value="Tis"> Tis
+                                <input type="radio" name="optionsT" value="T1"> T1
+                                <input type="radio" name="optionsT" value="T1mi"> T1mi 
+                                <input type="radio" name="optionsT" value="T1a"> T1a
+                                <input type="radio" name="optionsT" value="T1b"> T1b
+                                <input type="radio" name="optionsT" value="T1c"> T1c 
+                                <input type="radio" name="optionsT" value="T2"> T2 
+                                <input type="radio" name="optionsT" value="T2a"> T2a
+                                <input type="radio" name="optionsT" value="T2b"> T2b
+                                <input type="radio" name="optionsT" value="T3"> T3
+                                <input type="radio" name="optionsT" value="T4"> T4  
+                            </div>
+                            <div class="input-field1">
+                                <label >N - Ganglions lymphatiques régionaux</label>
+                                <input type="radio" name="optionsN" value="NX"> NX
+                                <input type="radio" name="optionsN" value="N0"> N0
+                                <input type="radio" name="optionsN" value="N1"> N1
+                                <input type="radio" name="optionsN" value="N2"> N2
+                                <input type="radio" name="optionsN" value="N3"> N3 
+                                
+                             
+                            </div>
+                            <div class="input-field1">
+                                <label >M - Métastase(s) à distance</label>
+                                <input type="radio" name="optionsM" value="Non applicable"> Non applicable
+                                <input type="radio" name="optionsM" value="M0"> M0
+                                <input type="radio" name="optionsM" value="M1a"> M1a
+                                <input type="radio" name="optionsM" value="M1b"> M1b
+                                <input type="radio" name="optionsM" value="M1c"> M1c
+                               
+                            </div>
+
+                        </div>
+                         
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Précédent</span>
+                        </div>
+                        
+                        <button class="submit">
+                            <span class="btnText">Soumettre</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+    <!--script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script type="module" src="bundle.js"></script-->
+    <script src="dist/bundle.js"></script>
+
+    <!--script type="module" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script-->
+
+    
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="node_modules/requirejs/require.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/officegen"></script-->
+
+</body>
+</html>
+
