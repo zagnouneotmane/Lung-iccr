@@ -5,8 +5,8 @@ def main():
     with open('index.html', 'r') as f:
         html_code = f.read()
 
-    # Afficher le contenu HTML dans l'application Streamlit
-    st.components.v1.html(html_code, height=600, scrolling=True)
+    # Display the HTML code as Markdown
+    st.markdown(html_code, unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
