@@ -466,12 +466,7 @@ form.addEventListener('submit', (event) => {
   doc.text(marge2, 120, 310 + l3);
 
   const STATURadios = form.querySelectorAll(".input-field1 input[name='options33rr']:checked");
-  /*const SSTATURadios = form.querySelectorAll(".input-field1 input[name='option1drr']:checked");
-  let SSTATU = "";
-
-  SSTATURadios.forEach(radio => {
-    SSTATU = radio.value;
-  });*/
+  
   const S1STATURadios = form.querySelectorAll(".input-field1 input[name='options1drr']:checked");
   let S1STATU = "";
 
