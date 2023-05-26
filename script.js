@@ -686,14 +686,14 @@ form.addEventListener('submit', (event) => {
   const Anticorpsn = document.getElementById('ANN').value;
   const clc = document.getElementById('CLC').value;
 
-  if (isPageFull(350 + l3)) {
+  if (isPageFull(350 + l4)) {
     doc.addPage();
     const rectX2 = 5;
     const rectY2 = 5;
     const rectWidth2 = 200; // Largeur du rectangle basée sur la largeur du texte
     const rectHeight2 = 290; // Hauteur du rectangle
     doc.rect(rectX2, rectY2, rectWidth2, rectHeight2, 'S'); // Dessiner le rectangle
-    l3 = -330;
+    l4 = -330;
   }
   // Ajouter les valeurs au document PDF
   doc.text(`Anticorps positifs  : ${Anticorpsp}`, 30, 350 + l4);
