@@ -98,7 +98,8 @@ input[type="radio"][value="male"]:checked + #male-options {
 }
 
 .container form .form{
-    position: absolute;
+    position: relative;
+    max-height: 0px;
     background-color: #fbfcfd;
     transition: 0.3s ease;
 }
