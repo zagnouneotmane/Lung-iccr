@@ -104,16 +104,19 @@ input[type="radio"][value="male"]:checked + #male-options {
     transition: 0.3s ease;
 }
 .container form .form.second{
+    position: relative;
     opacity: 0;
     pointer-events: none;
     transform: translateX(100%);
 }
 form.secActive .form.second{
+    position: relative;
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
 }
 form.secActive .form.first{
+    position: relative;
     opacity: 0;
     pointer-events: none;
     transform: translateX(-100%);
