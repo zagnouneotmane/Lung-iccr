@@ -80,7 +80,6 @@ textarea {
 }
 .container form{
     position: relative;
-    padding: 10px;
     margin-top: 16px;
     min-height: 1300px;
     /*max-height: 1000px;*/
@@ -88,7 +87,7 @@ textarea {
     height: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: #f4f6f8;
 }
 .checkbox-group {
     display: none;
@@ -100,6 +99,8 @@ input[type="radio"][value="male"]:checked + #male-options {
 
 .container form .form{
     position: absolute;
+    padding: 20px;
+    margin: 0 35px;
     background-color: #fbfcfd;
     transition: 0.3s ease;
 }
