@@ -80,8 +80,6 @@ textarea {
 }
 .container form{
     position: relative;
-    display: flex;
-    justify-content: center;
     margin-top: 16px;
     min-height: 1300px;
     /*max-height: 1000px;*/
@@ -100,7 +98,8 @@ input[type="radio"][value="male"]:checked + #male-options {
 }
 
 .container form .form{
-    position: absolute;
+    position: relative;
+    
     background-color: #fbfcfd;
     transition: 0.3s ease;
 }
