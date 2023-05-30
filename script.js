@@ -792,7 +792,7 @@ form.addEventListener('submit', (event) => {
   doc.text(`${RM}`, 180, 410 + l5);
 
 
-  doc.save("filename.pdf");
+  doc.save(`Rapport_poumon_${nom}.pdf`);
 });
 
 
